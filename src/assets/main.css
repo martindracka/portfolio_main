@@ -1,0 +1,170 @@
+/* =============================================
+   DESIGN TOKENS  — steel-blue atmospheric theme
+   ============================================= */
+:root {
+  --bg-primary:    rgba(11, 14, 24, 0.93);
+  --bg-secondary:  rgba(7, 10, 18, 0.91);
+  --bg-card:       rgba(16, 20, 36, 0.88);
+  --bg-card-hover: rgba(22, 28, 50, 0.92);
+
+  --accent:        #3a9fd8;
+  --accent-light:  #5cb8f0;
+  --accent-glow:   rgba(58, 159, 216, 0.18);
+
+  --text-primary:   #f0f4f8;
+  --text-secondary: #8ea3b8;
+  --text-muted:     #445566;
+
+  --border:        rgba(255, 255, 255, 0.07);
+  --border-accent: rgba(58, 159, 216, 0.35);
+
+  --radius-sm:  6px;
+  --radius-md:  12px;
+  --radius-lg:  20px;
+
+  --shadow-card:   0 4px 32px rgba(0, 0, 0, 0.55);
+  --shadow-accent: 0 0 48px rgba(58, 159, 216, 0.12);
+
+  --transition:      0.25s ease;
+  --transition-slow: 0.4s ease;
+
+  --nav-height:    64px;
+  --max-width:     1200px;
+  --section-pad:   clamp(60px, 8vw, 120px);
+  --section-pad-x: clamp(20px, 5vw, 40px);
+}
+
+/* =============================================
+   RESET & BASE
+   ============================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  /* Atmospheric background — fixed so it stays put while scrolling */
+  background-color: #0b0e18;
+  background-image: url('/bg.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center top;
+
+  color: var(--text-primary);
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* =============================================
+   SCROLLBAR
+   ============================================= */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0b0e18; }
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 3px;
+}
+
+/* =============================================
+   UTILITY CLASSES
+   ============================================= */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-pad-x);
+}
+
+.section {
+  padding: var(--section-pad) 0;
+}
+
+.section-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 520px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: var(--accent-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--accent-glow);
+}
+
+.btn-outline {
+  border: 1.5px solid var(--border-accent);
+  color: var(--accent);
+}
+.btn-outline:hover {
+  background: var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+/* =============================================
+   SELECTION COLOR
+   ============================================= */
+::selection {
+  background: var(--accent-glow);
+  color: var(--text-primary);
+}
