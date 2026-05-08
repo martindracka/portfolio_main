@@ -146,9 +146,6 @@ onUnmounted(() => clearTimeout(typeTimer))
       <div class="hero__photo-wrap">
         <div class="hero__photo-frame">
           <img :src="martinImg" alt="Martin Dracka" class="hero__photo" />
-          <!-- Subtle corner accent -->
-          <div class="hero__photo-corner hero__photo-corner--tl" aria-hidden="true"></div>
-          <div class="hero__photo-corner hero__photo-corner--br" aria-hidden="true"></div>
         </div>
       </div>
 
@@ -168,26 +165,12 @@ onUnmounted(() => clearTimeout(typeTimer))
   overflow: hidden;
   padding-top:    calc(var(--nav-height) + 40px);
   padding-bottom: 60px;
+  background: #0b0e18;
 }
 
-.hero__glow {
-  position: absolute;
-  top: -20%;
-  right: -10%;
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle, rgba(30, 90, 160, 0.1) 0%, transparent 70%);
-  pointer-events: none;
-}
-
+.hero__glow,
 .hero__grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
-  background-size: 60px 60px;
-  pointer-events: none;
+  display: none;
 }
 
 /* =============================================
@@ -426,26 +409,13 @@ onUnmounted(() => clearTimeout(typeTimer))
   position: relative;
   width: min(320px, 80vw);
   height: min(400px, 100vw);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  border: 1px solid var(--border-accent);
-  box-shadow: 0 0 60px rgba(58, 159, 216, 0.2), var(--shadow-card);
-}
-
-.hero__photo-frame::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(8,11,20,0.35) 0%, transparent 55%);
-  z-index: 1;
-  pointer-events: none;
 }
 
 .hero__photo {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  object-fit: contain;
+  object-position: center bottom;
   display: block;
 }
 

@@ -20,7 +20,7 @@ import ContactSection from './components/ContactSection.vue'
     <footer class="site-footer">
       <div class="container">
         <p class="footer-copy">
-          &copy; {{ new Date().getFullYear() }} Martin Dracka. Crafted with Vue 3 + Vite.
+          &copy; {{ new Date().getFullYear() }} Martin Dracka. 
         </p>
         <p class="footer-note">Built from scratch — no Tailwind, no Bootstrap.</p>
       </div>
